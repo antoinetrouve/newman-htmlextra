@@ -3,6 +3,8 @@
 ### Description
 This image runs latest Newman version on latest Node and current Alpine.
 
+**Docker hub url** : [antoinetrouve/newman](https://hub.docker.com/repository/docker/antoinetrouve/newman)
+
 ## Using for Gitlab Continuous Integration Pipeline
 Example .gitlab-ci.yml:
 
