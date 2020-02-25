@@ -3,10 +3,10 @@
 ### Description
 This image runs latest Newman version on latest Node and current Alpine.
 
+## Using for Gitlab Continuous Integration Pipeline
 Example .gitlab-ci.yml:
 
 ```
-...your pipeline config...
 stages:
   - postman-test
 
@@ -18,5 +18,12 @@ postman-test:
   artifacts:
     when: always
     paths:
-      - reports.html
+      - report.html
+  tags:
+    - docker_hub
+```
+
+## Using with Docker command
+```
+docker run --rm -v "your/absolute/path/api:/api" newman-htmlextra newman run "/api/your_collection.json" -e "/api/your_environment.json" -r htmlextra --reporter-htmlextra-title "Reporting" --reporter-htmlextra-browserTitle "Reporting" --reporter-htmlextra-export "/api/report.html"
 ```
